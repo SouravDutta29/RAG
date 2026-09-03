@@ -15,18 +15,36 @@ class HybridSearcher:
         
         # Initialize Dense Store (ChromaDB)
         self.chroma_client = chromadb.PersistentClient(path=str(CHROMA_DB_PATH))
-        self.collection = self.chroma_client.get_collection(name=COLLECTION_NAME)
+        try:
+            self.collection = self.chroma_client.get_collection(name=COLLECTION_NAME)
+        except Exception:
+            import logging
+            logging.warning("Collection not found. Rebuilding vector store on the fly...")
+            from indexer.vector_store import build_vector_store
+            build_vector_store()
+            self.chroma_client = chromadb.PersistentClient(path=str(CHROMA_DB_PATH))
+            self.collection = self.chroma_client.get_collection(name=COLLECTION_NAME)
         self.embedder = BGEEmbedder()
         
         # Initialize Sparse Store (BM25)
         bm25_index_path = BM25_DIR / "bm25_index.pkl"
         chunks_meta_path = BM25_DIR / "bm25_chunks.json"
         
-        with open(bm25_index_path, "rb") as f:
-            self.bm25 = pickle.load(f)
-            
-        with open(chunks_meta_path, "r", encoding="utf-8") as f:
-            self.chunks = json.load(f)
+        try:
+            with open(bm25_index_path, "rb") as f:
+                self.bm25 = pickle.load(f)
+                
+            with open(chunks_meta_path, "r", encoding="utf-8") as f:
+                self.chunks = json.load(f)
+        except Exception:
+            import logging
+            logging.warning("BM25 index corrupted or missing. Rebuilding...")
+            from indexer.bm25_index import build_bm25_index
+            build_bm25_index()
+            with open(bm25_index_path, "rb") as f:
+                self.bm25 = pickle.load(f)
+            with open(chunks_meta_path, "r", encoding="utf-8") as f:
+                self.chunks = json.load(f)
             
         # Create a fast lookup for chunk data by chunk_id
         self.chunk_lookup = {c["chunk_id"]: c for c in self.chunks}

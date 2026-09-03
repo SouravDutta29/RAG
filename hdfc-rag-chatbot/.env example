@@ -1,0 +1,4 @@
+GROQ_API_KEY=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
+CHROMA_DB_PATH=./data/chroma
+BM25_INDEX_PATH=./data/bm25
+RAW_DATA_PATH=./data/raw

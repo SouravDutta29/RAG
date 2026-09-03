@@ -1,0 +1,115 @@
+# Daily full ingest: scrape → normalize → chunk → embed → local Chroma upsert.
+#
+# Schedule: every day at 09:15 India Standard Time (IST).
+#   GitHub Actions cron is UTC; India has no DST → 09:15 IST == 03:45 UTC → cron "45 3 * * *".
+#
+# Same sequence runs on manual "Run workflow" (workflow_dispatch).
+#
+# Phase 4.3 writes vectors under data/chroma/ (chromadb PersistentClient). No hosted Chroma.
+# Implementation: ingest/phases/* — see docs/rag-architecture.md §4.0.
+name: Daily ingest (09:15 IST)
+
+on:
+  schedule:
+    # 03:45 UTC == 09:15 IST (Asia/Kolkata, year-round)
+    - cron: "45 3 * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: ingest-${{ github.ref }}
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  daily-ingest:
+    name: Scrape → normalize → chunk & embed → Chroma (local)
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    env:
+      # Cache embedding model (BAAI/bge-small-en-v1.5) between runs
+      HF_HOME: ${{ github.workspace }}/.cache/huggingface
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Cache Hugging Face models
+        uses: actions/cache@v4
+        with:
+          path: .cache/huggingface
+          key: hf-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
+          restore-keys: |
+            hf-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      # --- Phase 4.0: fetch allowlisted URLs → data/raw/<run_id>/ ---
+      - name: Phase 4.0 — Scrape URL registry
+        env:
+          INGEST_USER_AGENT: ${{ secrets.INGEST_USER_AGENT }}
+          INGEST_RATE_LIMIT_SECONDS: ${{ vars.INGEST_RATE_LIMIT_SECONDS }}
+        run: python3 -m ingest.phases.phase_4_0_scheduler_scraping
+
+      # --- Phase 4.1: raw HTML → normalized text → data/normalized/<run_id>/ ---
+      - name: Phase 4.1 — Normalize HTML
+        if: success()
+        run: python3 -m ingest.phases.phase_4_1_normalize
+
+      # --- Phase 4.2: chunk + local BGE embeddings → data/chunked/<run_id>/ ---
+      - name: Phase 4.2 — Chunk and embed (bge-small-en-v1.5)
+        if: success()
+        run: python3 -m ingest.phases.phase_4_2_chunk_embedding
+
+      # --- Phase 4.3: upsert vectors + metadata to on-disk Chroma (same run_id) ---
+      - name: Phase 4.3 — Upsert to local Chroma
+        if: success()
+        run: python3 -m ingest.phases.phase_4_3_vector_index
+
+      # Drop previous run_* dirs so artifacts only carry the latest pipeline run (smaller uploads).
+      - name: Prune old ingest runs (keep latest)
+        if: success()
+        run: python3 -m ingest.prune_old_runs
+
+      - name: Upload raw HTML and scrape manifest
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-raw-${{ github.run_id }}
+          path: data/raw/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload normalized text and scheme facts
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-normalized-${{ github.run_id }}
+          path: data/normalized/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload chunks and embeddings (+ Chroma manifest)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-chunked-${{ github.run_id }}
+          path: data/chunked/
+          if-no-files-found: warn
+          retention-days: 14
+
+      - name: Upload Chroma persist directory (vector index)
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ingest-chroma-${{ github.run_id }}
+          path: data/chroma/
+          if-no-files-found: warn
+          retention-days: 14

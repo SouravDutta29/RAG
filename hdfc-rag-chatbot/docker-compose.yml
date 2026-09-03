@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: hdfc_api
+    ports:
+      - "8000:8000"
+    environment:
+      - GROQ_API_KEY=${GROQ_API_KEY}
+    volumes:
+      - ./data:/app/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/v1/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ui
+    container_name: hdfc_ui
+    ports:
+      - "8501:8501"
+    environment:
+      - API_URL=http://api:8000/api/v1
+    depends_on:
+      api:
+        condition: service_healthy
+
+  chromadb:
+    image: chromadb/chroma:latest
+    container_name: hdfc_chromadb
+    ports:
+      - "8080:8000"
+    volumes:
+      - chroma_data:/chroma/chroma
+
+  redis:
+    image: redis:alpine
+    container_name: hdfc_redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  ingest-job:
+    image: curlimages/curl
+    container_name: hdfc_ingest_job
+    depends_on:
+      api:
+        condition: service_healthy
+    volumes:
+      - ./docker/ingest.sh:/ingest.sh
+    entrypoint: ["sh", "/ingest.sh"]
+
+volumes:
+  chroma_data:
+  redis_data:

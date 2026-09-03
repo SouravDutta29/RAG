@@ -92,7 +92,8 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode()
 
-img_b64 = get_base64_image("ui/groww_logo.png")
+logo_path = Path(__file__).resolve().parent / "groww_logo.png"
+img_b64 = get_base64_image(logo_path)
 st.markdown(
     f"""
     <div style='display: flex; align-items: center; margin-bottom: 20px;'>

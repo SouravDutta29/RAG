@@ -412,7 +412,7 @@ gantt
 
 ### 6.1 Golden Test Set Construction (50 Queries)
 
-- [ ] Create `evaluation/golden_test_set.json` with 50 queries and expected answers distributed as:
+- ✅ Create `evaluation/golden_test_set.json` with 50 queries and expected answers distributed as:
 
   | Query Type | # Queries | Example |
   | :--- | :--- | :--- |
@@ -425,8 +425,8 @@ gantt
 
 ### 6.2 Ragas Evaluation Pipeline
 
-- [ ] Install `ragas` and configure evaluation dataset
-- [ ] Implement `evaluation/run_evaluation.py`:
+- ✅ Install `ragas` and configure evaluation dataset
+- ✅ Implement `evaluation/run_evaluation.py`:
   - Feed all 50 golden queries through the full RAG pipeline
   - Collect `{query, answer, contexts, ground_truth}` for each
   - Compute the following Ragas metrics:

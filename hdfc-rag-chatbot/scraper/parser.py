@@ -2,7 +2,7 @@ import json
 import logging
 from pathlib import Path
 from collections import defaultdict
-from models import FundScheme, Holding, SectorAllocation
+from scraper.models import FundScheme, Holding, SectorAllocation
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 

@@ -1,14 +1,24 @@
 import streamlit as st
-import requests
-import json
-import time
+import sys
+from pathlib import Path
 
-import os
-API_URL = os.getenv("API_URL", "http://localhost:8000/api/v1")
+# Add root directory to sys.path so modules can be imported
+root_dir = Path(__file__).resolve().parent.parent
+sys.path.append(str(root_dir))
+
+from retriever.reranker import Reranker
+from generator.guardrail import PromptGuard
+from generator.prompt_builder import PromptBuilder
+from generator.llm_engine import LLMEngine
+from generator.verifier import FactVerifier
+from generator.citation_injector import CitationInjector
+from dotenv import load_dotenv
+
+load_dotenv()
 
 st.set_page_config(
-    page_title="HDFC Mutual Fund Advisor",
-    page_icon="📈",
+    page_title="Groww FAQ Assistant",
+    page_icon="https://assets-netstorage.groww.in/web-assets/nbg_mobile/prod/_next/static/media/section-intro.95ecaf7c.svg",
     layout="centered"
 )
 
@@ -37,8 +47,8 @@ st.markdown("""
     
     /* User chat bubble */
     [data-testid="stChatMessage-user"] {
-        background-color: rgba(88, 166, 255, 0.1) !important;
-        border: 1px solid rgba(88, 166, 255, 0.3) !important;
+        background-color: rgba(0, 208, 156, 0.1) !important;
+        border: 1px solid rgba(0, 208, 156, 0.3) !important;
     }
     
     /* Assistant chat bubble */
@@ -57,21 +67,56 @@ st.markdown("""
         white-space: nowrap !important;
         transition: all 0.2s ease !important;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+        border: 1px solid #00d09c !important;
+        color: #00d09c !important;
     }
     div[data-testid="stButton"] button p {
         font-size: 0.82rem !important;
+        color: inherit !important;
     }
     div[data-testid="stButton"] button:hover {
         transform: translateY(-2px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1) !important;
+        background-color: #00d09c !important;
+        color: white !important;
+        border-color: #00d09c !important;
     }
 </style>
 """, unsafe_allow_html=True)
 
 
 
-st.title("📈 HDFC Fund Advisor AI")
-st.caption("Powered by Groq Llama3, ChromaDB, and BGE Cross-Encoder Reranking")
+import base64
+
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        return base64.b64encode(img_file.read()).decode()
+
+img_b64 = get_base64_image("ui/groww_logo.png")
+st.markdown(
+    f"""
+    <div style='display: flex; align-items: center; margin-bottom: 20px;'>
+        <img src='data:image/png;base64,{img_b64}' style='width: 75px; height: 75px; margin-right: 18px; border-radius: 50%; object-fit: contain;'>
+        <div style='display: flex; flex-direction: column; justify-content: center;'>
+            <h1 style='margin: 0; padding: 0; line-height: 1.2;'>Groww FAQ Assistant</h1>
+            <p style='margin: 0; padding: 0; font-size: 0.95rem; opacity: 0.7;'>Get your mutual fund related queries</p>
+        </div>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+@st.cache_resource(show_spinner="Loading AI Models into Memory (this might take a moment)...")
+def load_rag_components():
+    return {
+        "reranker": Reranker(),
+        "guard": PromptGuard(),
+        "prompt_builder": PromptBuilder(),
+        "llm": LLMEngine(),
+        "verifier": FactVerifier(),
+        "citation": CitationInjector()
+    }
 
 
 # Initialize Chat History
@@ -105,7 +150,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # User Input
-prompt = st.chat_input("Ask about HDFC mutual funds...")
+prompt = st.chat_input("Ask about Groww mutual funds...")
 
 # Handle pill click
 if "pill_query" in st.session_state and st.session_state.pill_query:
@@ -124,28 +169,37 @@ if prompt:
         full_response = ""
         
         try:
-            # We make a POST request with stream=True
-            response = requests.post(
-                f"{API_URL}/chat",
-                json={"query": prompt, "history": []},
-                stream=True,
-                timeout=30
-            )
+            components = load_rag_components()
             
-            if response.status_code == 200:
-                for chunk in response.iter_content(chunk_size=None, decode_unicode=True):
-                    if chunk:
-                        full_response += chunk
-                        # Update placeholder
-                        message_placeholder.markdown(full_response + "▌")
-                # Final update without cursor
+            # 1. Guardrail Check
+            if not components["guard"].check_safety(prompt):
+                full_response = "I cannot fulfill this request as it violates safety guidelines."
                 message_placeholder.markdown(full_response)
             else:
-                st.error(f"API Error {response.status_code}: {response.text}")
-                full_response = "Sorry, I encountered an error communicating with the backend."
+                # 2. Retrieve & Rerank
+                top_chunks = components["reranker"].retrieve_and_rerank(prompt)
                 
-        except requests.exceptions.RequestException as e:
-            st.error(f"Could not connect to API: {e}")
-            full_response = "Sorry, the backend server is unreachable."
+                # 3. Build Prompt
+                llm_prompt = components["prompt_builder"].build_prompt(prompt, top_chunks)
+                
+                # 4. Stream response
+                for token in components["llm"].generate_response_stream(llm_prompt):
+                    full_response += token
+                    message_placeholder.markdown(full_response + "▌")
+                    
+                # 5. Output Verification
+                verified_text = components["verifier"].verify(full_response, top_chunks)
+                if verified_text != full_response:
+                    full_response = verified_text + "\n\n[Correction: Verified data not available in the knowledge base for this figure.]"
+                    
+                # 6. Citations
+                citations = components["citation"].inject_citations("", top_chunks)
+                full_response += citations
+                
+                # Final update
+                message_placeholder.markdown(full_response)
+        except Exception as e:
+            st.error(f"An error occurred: {str(e)}")
+            full_response = "I encountered an error processing your request."
             
         st.session_state.messages.append({"role": "assistant", "content": full_response})

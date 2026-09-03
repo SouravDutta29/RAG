@@ -1,0 +1,202 @@
+[
+    {
+        "query": "What is the expense ratio of HDFC Small Cap?",
+        "ground_truth": "The expense ratio of HDFC Small Cap is typically around 1-2%, depending on regular vs direct plan."
+    },
+    {
+        "query": "What is the NAV of HDFC Small Cap today?",
+        "ground_truth": "The NAV varies daily, but can be found by querying the latest data."
+    },
+    {
+        "query": "Who is the fund manager for HDFC Small Cap?",
+        "ground_truth": "The fund manager for HDFC Small Cap is an experienced professional at HDFC AMC."
+    },
+    {
+        "query": "What is the expense ratio of HDFC Mid Cap?",
+        "ground_truth": "The expense ratio of HDFC Mid Cap is typically around 1-2%, depending on regular vs direct plan."
+    },
+    {
+        "query": "What is the NAV of HDFC Mid Cap today?",
+        "ground_truth": "The NAV varies daily, but can be found by querying the latest data."
+    },
+    {
+        "query": "Who is the fund manager for HDFC Mid Cap?",
+        "ground_truth": "The fund manager for HDFC Mid Cap is an experienced professional at HDFC AMC."
+    },
+    {
+        "query": "What is the expense ratio of HDFC Flexi Cap?",
+        "ground_truth": "The expense ratio of HDFC Flexi Cap is typically around 1-2%, depending on regular vs direct plan."
+    },
+    {
+        "query": "What is the NAV of HDFC Flexi Cap today?",
+        "ground_truth": "The NAV varies daily, but can be found by querying the latest data."
+    },
+    {
+        "query": "Who is the fund manager for HDFC Flexi Cap?",
+        "ground_truth": "The fund manager for HDFC Flexi Cap is an experienced professional at HDFC AMC."
+    },
+    {
+        "query": "What is the expense ratio of HDFC Top 100?",
+        "ground_truth": "The expense ratio of HDFC Top 100 is typically around 1-2%, depending on regular vs direct plan."
+    },
+    {
+        "query": "What is the NAV of HDFC Top 100 today?",
+        "ground_truth": "The NAV varies daily, but can be found by querying the latest data."
+    },
+    {
+        "query": "Who is the fund manager for HDFC Top 100?",
+        "ground_truth": "The fund manager for HDFC Top 100 is an experienced professional at HDFC AMC."
+    },
+    {
+        "query": "What is the expense ratio of HDFC Balanced Advantage?",
+        "ground_truth": "The expense ratio of HDFC Balanced Advantage is typically around 1-2%, depending on regular vs direct plan."
+    },
+    {
+        "query": "What is the NAV of HDFC Balanced Advantage today?",
+        "ground_truth": "The NAV varies daily, but can be found by querying the latest data."
+    },
+    {
+        "query": "Who is the fund manager for HDFC Balanced Advantage?",
+        "ground_truth": "The fund manager for HDFC Balanced Advantage is an experienced professional at HDFC AMC."
+    },
+    {
+        "query": "Which fund has higher AUM: HDFC Small Cap or HDFC Mid Cap?",
+        "ground_truth": "AUM comparisons between HDFC Small Cap and HDFC Mid Cap depend on current market data."
+    },
+    {
+        "query": "Compare the exit load of HDFC Small Cap and HDFC Mid Cap.",
+        "ground_truth": "Exit loads for equity funds like HDFC Small Cap and HDFC Mid Cap are typically 1% if redeemed within 1 year."
+    },
+    {
+        "query": "Is HDFC Small Cap riskier than HDFC Mid Cap?",
+        "ground_truth": "Risk depends on the fund category. Small cap funds are generally riskier than Large cap or Balanced funds."
+    },
+    {
+        "query": "Which fund has higher AUM: HDFC Mid Cap or HDFC Flexi Cap?",
+        "ground_truth": "AUM comparisons between HDFC Mid Cap and HDFC Flexi Cap depend on current market data."
+    },
+    {
+        "query": "Compare the exit load of HDFC Mid Cap and HDFC Flexi Cap.",
+        "ground_truth": "Exit loads for equity funds like HDFC Mid Cap and HDFC Flexi Cap are typically 1% if redeemed within 1 year."
+    },
+    {
+        "query": "Is HDFC Mid Cap riskier than HDFC Flexi Cap?",
+        "ground_truth": "Risk depends on the fund category. Small cap funds are generally riskier than Large cap or Balanced funds."
+    },
+    {
+        "query": "Which fund has higher AUM: HDFC Flexi Cap or HDFC Top 100?",
+        "ground_truth": "AUM comparisons between HDFC Flexi Cap and HDFC Top 100 depend on current market data."
+    },
+    {
+        "query": "Compare the exit load of HDFC Flexi Cap and HDFC Top 100.",
+        "ground_truth": "Exit loads for equity funds like HDFC Flexi Cap and HDFC Top 100 are typically 1% if redeemed within 1 year."
+    },
+    {
+        "query": "Is HDFC Flexi Cap riskier than HDFC Top 100?",
+        "ground_truth": "Risk depends on the fund category. Small cap funds are generally riskier than Large cap or Balanced funds."
+    },
+    {
+        "query": "Which fund has higher AUM: HDFC Top 100 or HDFC Balanced Advantage?",
+        "ground_truth": "AUM comparisons between HDFC Top 100 and HDFC Balanced Advantage depend on current market data."
+    },
+    {
+        "query": "Compare the exit load of HDFC Top 100 and HDFC Balanced Advantage.",
+        "ground_truth": "Exit loads for equity funds like HDFC Top 100 and HDFC Balanced Advantage are typically 1% if redeemed within 1 year."
+    },
+    {
+        "query": "Is HDFC Top 100 riskier than HDFC Balanced Advantage?",
+        "ground_truth": "Risk depends on the fund category. Small cap funds are generally riskier than Large cap or Balanced funds."
+    },
+    {
+        "query": "Which fund has higher AUM: HDFC Balanced Advantage or HDFC Small Cap?",
+        "ground_truth": "AUM comparisons between HDFC Balanced Advantage and HDFC Small Cap depend on current market data."
+    },
+    {
+        "query": "Compare the exit load of HDFC Balanced Advantage and HDFC Small Cap.",
+        "ground_truth": "Exit loads for equity funds like HDFC Balanced Advantage and HDFC Small Cap are typically 1% if redeemed within 1 year."
+    },
+    {
+        "query": "Is HDFC Balanced Advantage riskier than HDFC Small Cap?",
+        "ground_truth": "Risk depends on the fund category. Small cap funds are generally riskier than Large cap or Balanced funds."
+    },
+    {
+        "query": "What is the top holding in HDFC Small Cap?",
+        "ground_truth": "The top holdings depend on the fund category, usually top banks or IT companies for large caps."
+    },
+    {
+        "query": "What percentage of HDFC Small Cap is invested in equity?",
+        "ground_truth": "Equity funds usually invest 65-100% in equities."
+    },
+    {
+        "query": "What is the top holding in HDFC Mid Cap?",
+        "ground_truth": "The top holdings depend on the fund category, usually top banks or IT companies for large caps."
+    },
+    {
+        "query": "What percentage of HDFC Mid Cap is invested in equity?",
+        "ground_truth": "Equity funds usually invest 65-100% in equities."
+    },
+    {
+        "query": "What is the top holding in HDFC Flexi Cap?",
+        "ground_truth": "The top holdings depend on the fund category, usually top banks or IT companies for large caps."
+    },
+    {
+        "query": "What percentage of HDFC Flexi Cap is invested in equity?",
+        "ground_truth": "Equity funds usually invest 65-100% in equities."
+    },
+    {
+        "query": "What is the top holding in HDFC Top 100?",
+        "ground_truth": "The top holdings depend on the fund category, usually top banks or IT companies for large caps."
+    },
+    {
+        "query": "What percentage of HDFC Top 100 is invested in equity?",
+        "ground_truth": "Equity funds usually invest 65-100% in equities."
+    },
+    {
+        "query": "What is the top holding in HDFC Balanced Advantage?",
+        "ground_truth": "The top holdings depend on the fund category, usually top banks or IT companies for large caps."
+    },
+    {
+        "query": "What percentage of HDFC Balanced Advantage is invested in equity?",
+        "ground_truth": "Equity funds usually invest 65-100% in equities."
+    },
+    {
+        "query": "What is the exit load policy for HDFC Small Cap?",
+        "ground_truth": "The exit load is generally 1% if redeemed within 1 year, and nil thereafter."
+    },
+    {
+        "query": "What is the minimum SIP amount for HDFC Small Cap?",
+        "ground_truth": "The minimum SIP amount is usually \u20b9100 or \u20b9500."
+    },
+    {
+        "query": "What is the exit load policy for HDFC Mid Cap?",
+        "ground_truth": "The exit load is generally 1% if redeemed within 1 year, and nil thereafter."
+    },
+    {
+        "query": "What is the minimum SIP amount for HDFC Mid Cap?",
+        "ground_truth": "The minimum SIP amount is usually \u20b9100 or \u20b9500."
+    },
+    {
+        "query": "What is the exit load policy for HDFC Flexi Cap?",
+        "ground_truth": "The exit load is generally 1% if redeemed within 1 year, and nil thereafter."
+    },
+    {
+        "query": "What is the minimum SIP amount for HDFC Flexi Cap?",
+        "ground_truth": "The minimum SIP amount is usually \u20b9100 or \u20b9500."
+    },
+    {
+        "query": "What is the exit load policy for HDFC Top 100?",
+        "ground_truth": "The exit load is generally 1% if redeemed within 1 year, and nil thereafter."
+    },
+    {
+        "query": "What is the minimum SIP amount for HDFC Top 100?",
+        "ground_truth": "The minimum SIP amount is usually \u20b9100 or \u20b9500."
+    },
+    {
+        "query": "What is the exit load policy for HDFC Balanced Advantage?",
+        "ground_truth": "The exit load is generally 1% if redeemed within 1 year, and nil thereafter."
+    },
+    {
+        "query": "What is the minimum SIP amount for HDFC Balanced Advantage?",
+        "ground_truth": "The minimum SIP amount is usually \u20b9100 or \u20b9500."
+    }
+]

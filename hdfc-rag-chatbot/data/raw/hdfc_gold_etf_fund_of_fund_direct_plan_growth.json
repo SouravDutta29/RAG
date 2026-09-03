@@ -1,0 +1,39 @@
+{
+  "scheme_slug": "hdfc-gold-etf-fund-of-fund-direct-plan-growth",
+  "scheme_name": "HDFC Gold ETF Fund of Fund Direct Plan Growth",
+  "category": "Commodities",
+  "nav": 46.6397,
+  "nav_date": "02-Sep-2026",
+  "aum_cr": 11197.0455,
+  "expense_ratio_pct": 0.2,
+  "min_sip": 100.0,
+  "rating_stars": 3,
+  "risk_label": "High",
+  "return_1d_pct": -1.47,
+  "return_1y_pct": 42.52,
+  "return_3y_pct": 34.64,
+  "return_5y_pct": 24.75,
+  "top_holdings": [
+    {
+      "stock": "HDFC Gold ETF",
+      "weight_pct": 100.05
+    },
+    {
+      "stock": "Repo",
+      "weight_pct": 0.04
+    },
+    {
+      "stock": "Net Payables",
+      "weight_pct": -0.09
+    }
+  ],
+  "sector_allocation": [
+    {
+      "sector": "Unspecified",
+      "weight_pct": 100.0
+    }
+  ],
+  "exit_load_rule": "Exit load of 1%, if redeemed within 15 days.",
+  "benchmark_index": "Domestic Price of Gold",
+  "fund_manager": "Krishan Daga"
+}

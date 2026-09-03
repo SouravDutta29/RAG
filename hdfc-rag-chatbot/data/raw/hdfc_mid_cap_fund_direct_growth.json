@@ -1,0 +1,143 @@
+{
+  "scheme_slug": "hdfc-mid-cap-fund-direct-growth",
+  "scheme_name": "HDFC Mid Cap Fund Direct Growth",
+  "category": "Equity",
+  "nav": 235.185,
+  "nav_date": "02-Sep-2026",
+  "aum_cr": 105142.6943,
+  "expense_ratio_pct": 0.74,
+  "min_sip": 100.0,
+  "rating_stars": 5,
+  "risk_label": "Very High",
+  "return_1d_pct": -0.51,
+  "return_1y_pct": 10.8,
+  "return_3y_pct": 18.59,
+  "return_5y_pct": 19.92,
+  "top_holdings": [
+    {
+      "stock": "Repo",
+      "weight_pct": 6.92
+    },
+    {
+      "stock": "The Federal Bank Ltd",
+      "weight_pct": 4.36
+    },
+    {
+      "stock": "AU Small Finance Bank Ltd",
+      "weight_pct": 3.96
+    },
+    {
+      "stock": "Max Financial Services Ltd",
+      "weight_pct": 3.72
+    },
+    {
+      "stock": "Balkrishna Industries Ltd",
+      "weight_pct": 3.37
+    },
+    {
+      "stock": "Ipca Laboratories Ltd",
+      "weight_pct": 3.01
+    },
+    {
+      "stock": "Indian Bank",
+      "weight_pct": 2.93
+    },
+    {
+      "stock": "Fortis Healthcare Ltd",
+      "weight_pct": 2.91
+    },
+    {
+      "stock": "Glenmark Pharmaceuticals Ltd",
+      "weight_pct": 2.85
+    },
+    {
+      "stock": "Coforge Ltd",
+      "weight_pct": 2.56
+    },
+    {
+      "stock": "Marico Ltd",
+      "weight_pct": 2.51
+    },
+    {
+      "stock": "Mahindra & Mahindra Financial Services Ltd",
+      "weight_pct": 2.43
+    },
+    {
+      "stock": "Vishal Mega Mart Ltd.",
+      "weight_pct": 2.3
+    },
+    {
+      "stock": "Hindustan Petroleum Corporation Ltd",
+      "weight_pct": 2.26
+    },
+    {
+      "stock": "Cummins India Ltd",
+      "weight_pct": 2.19
+    },
+    {
+      "stock": "Aurobindo Pharma Ltd",
+      "weight_pct": 2.01
+    },
+    {
+      "stock": "United Spirits Ltd",
+      "weight_pct": 1.98
+    },
+    {
+      "stock": "Tata Communications Ltd",
+      "weight_pct": 1.86
+    },
+    {
+      "stock": "Persistent Systems Ltd",
+      "weight_pct": 1.81
+    },
+    {
+      "stock": "Alkem Laboratories Ltd",
+      "weight_pct": 1.73
+    }
+  ],
+  "sector_allocation": [
+    {
+      "sector": "Financial",
+      "weight_pct": 27.26
+    },
+    {
+      "sector": "Healthcare",
+      "weight_pct": 14.37
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "weight_pct": 13.07
+    },
+    {
+      "sector": "Technology",
+      "weight_pct": 11.27
+    },
+    {
+      "sector": "Consumer Staples",
+      "weight_pct": 9.67
+    },
+    {
+      "sector": "Industrials",
+      "weight_pct": 8.63
+    },
+    {
+      "sector": "Unspecified",
+      "weight_pct": 6.94
+    },
+    {
+      "sector": "Materials",
+      "weight_pct": 5.21
+    },
+    {
+      "sector": "Energy & Utilities",
+      "weight_pct": 3.2
+    },
+    {
+      "sector": "Diversified",
+      "weight_pct": 0.4
+    }
+  ],
+  "exit_load_rule": "Exit load of 1% if redeemed within 1 year.",
+  "benchmark_index": "NIFTY Midcap 150 Total Return Index",
+  "fund_manager": "Chirag Setalvad"
+}

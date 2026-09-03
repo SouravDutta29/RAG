@@ -1,0 +1,143 @@
+{
+  "scheme_slug": "hdfc-small-cap-fund-direct-growth",
+  "scheme_name": "HDFC Small Cap Fund Direct Growth",
+  "category": "Equity",
+  "nav": 160.418,
+  "nav_date": "02-Sep-2026",
+  "aum_cr": 41679.0037,
+  "expense_ratio_pct": 0.75,
+  "min_sip": 100.0,
+  "rating_stars": 3,
+  "risk_label": "Very High",
+  "return_1d_pct": -0.34,
+  "return_1y_pct": -0.96,
+  "return_3y_pct": 11.19,
+  "return_5y_pct": 15.81,
+  "top_holdings": [
+    {
+      "stock": "Repo",
+      "weight_pct": 9.94
+    },
+    {
+      "stock": "Firstsource Solutions Ltd",
+      "weight_pct": 4.24
+    },
+    {
+      "stock": "Aster DM Healthcare Ltd",
+      "weight_pct": 3.89
+    },
+    {
+      "stock": "Gabriel India Ltd",
+      "weight_pct": 3.34
+    },
+    {
+      "stock": "eClerx Services Ltd",
+      "weight_pct": 2.85
+    },
+    {
+      "stock": "Bank Of Baroda",
+      "weight_pct": 2.73
+    },
+    {
+      "stock": "Krishna Institute Of Medical Sciences Ltd",
+      "weight_pct": 2.15
+    },
+    {
+      "stock": "Eris Lifesciences Ltd",
+      "weight_pct": 2.1
+    },
+    {
+      "stock": "Fortis Healthcare Ltd",
+      "weight_pct": 1.99
+    },
+    {
+      "stock": "Indian Bank",
+      "weight_pct": 1.94
+    },
+    {
+      "stock": "The Federal Bank Ltd",
+      "weight_pct": 1.79
+    },
+    {
+      "stock": "Home First Finance Company India Ltd",
+      "weight_pct": 1.73
+    },
+    {
+      "stock": "Apar Industries Ltd",
+      "weight_pct": 1.62
+    },
+    {
+      "stock": "PVR Ltd",
+      "weight_pct": 1.57
+    },
+    {
+      "stock": "Sonata Software Ltd",
+      "weight_pct": 1.55
+    },
+    {
+      "stock": "The Great Eastern Shipping Company Ltd",
+      "weight_pct": 1.47
+    },
+    {
+      "stock": "Vijaya Diagnostic Centre Ltd",
+      "weight_pct": 1.46
+    },
+    {
+      "stock": "Chalet Hotels Ltd",
+      "weight_pct": 1.46
+    },
+    {
+      "stock": "Suprajit Engineering Ltd",
+      "weight_pct": 1.43
+    },
+    {
+      "stock": "Kalpataru Power Transmission Ltd",
+      "weight_pct": 1.43
+    }
+  ],
+  "sector_allocation": [
+    {
+      "sector": "Industrials",
+      "weight_pct": 22.07
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "weight_pct": 19.98
+    },
+    {
+      "sector": "Healthcare",
+      "weight_pct": 12.34
+    },
+    {
+      "sector": "Financial",
+      "weight_pct": 12.27
+    },
+    {
+      "sector": "Unspecified",
+      "weight_pct": 9.98
+    },
+    {
+      "sector": "Materials",
+      "weight_pct": 7.6
+    },
+    {
+      "sector": "Technology",
+      "weight_pct": 7.18
+    },
+    {
+      "sector": "Consumer Staples",
+      "weight_pct": 4.93
+    },
+    {
+      "sector": "Diversified",
+      "weight_pct": 2.18
+    },
+    {
+      "sector": "Energy & Utilities",
+      "weight_pct": 1.47
+    }
+  ],
+  "exit_load_rule": "Exit load of 1% if redeemed within 1 year",
+  "benchmark_index": "BSE 250 SmallCap Total Return Index",
+  "fund_manager": "Chirag Setalvad"
+}

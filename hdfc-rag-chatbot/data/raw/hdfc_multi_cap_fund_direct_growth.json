@@ -1,0 +1,147 @@
+{
+  "scheme_slug": "hdfc-multi-cap-fund-direct-growth",
+  "scheme_name": "HDFC Multi Cap Fund Direct Growth",
+  "category": "Equity",
+  "nav": 19.823,
+  "nav_date": "02-Sep-2026",
+  "aum_cr": 20582.743,
+  "expense_ratio_pct": 0.93,
+  "min_sip": 100.0,
+  "rating_stars": 2,
+  "risk_label": "Very High",
+  "return_1d_pct": -0.74,
+  "return_1y_pct": 1.24,
+  "return_3y_pct": 12.33,
+  "return_5y_pct": null,
+  "top_holdings": [
+    {
+      "stock": "ICICI Bank Ltd",
+      "weight_pct": 3.77
+    },
+    {
+      "stock": "HDFC Bank Ltd",
+      "weight_pct": 3.63
+    },
+    {
+      "stock": "Reliance Industries Ltd",
+      "weight_pct": 2.51
+    },
+    {
+      "stock": "Axis Bank Ltd",
+      "weight_pct": 2.32
+    },
+    {
+      "stock": "Bharti Airtel Ltd",
+      "weight_pct": 2.2
+    },
+    {
+      "stock": "Britannia Industries Ltd",
+      "weight_pct": 2.18
+    },
+    {
+      "stock": "Zomato Ltd",
+      "weight_pct": 1.91
+    },
+    {
+      "stock": "NTPC Ltd",
+      "weight_pct": 1.75
+    },
+    {
+      "stock": "State Bank of India",
+      "weight_pct": 1.65
+    },
+    {
+      "stock": "Larsen & Toubro Ltd",
+      "weight_pct": 1.6
+    },
+    {
+      "stock": "Mahindra & Mahindra Ltd",
+      "weight_pct": 1.37
+    },
+    {
+      "stock": "Shriram Transport Finance Company Ltd",
+      "weight_pct": 1.31
+    },
+    {
+      "stock": "Kotak Mahindra Bank Ltd",
+      "weight_pct": 1.28
+    },
+    {
+      "stock": "Maruti Suzuki India Ltd",
+      "weight_pct": 1.27
+    },
+    {
+      "stock": "Alkem Laboratories Ltd",
+      "weight_pct": 1.26
+    },
+    {
+      "stock": "ICICI Lombard General Insurance Company Ltd",
+      "weight_pct": 1.24
+    },
+    {
+      "stock": "PNB Housing Finance Ltd",
+      "weight_pct": 1.23
+    },
+    {
+      "stock": "Balkrishna Industries Ltd",
+      "weight_pct": 1.18
+    },
+    {
+      "stock": "Tata Communications Ltd",
+      "weight_pct": 1.15
+    },
+    {
+      "stock": "PB Fintech Ltd",
+      "weight_pct": 1.13
+    }
+  ],
+  "sector_allocation": [
+    {
+      "sector": "Financial",
+      "weight_pct": 27.53
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "weight_pct": 19.17
+    },
+    {
+      "sector": "Industrials",
+      "weight_pct": 11.96
+    },
+    {
+      "sector": "Technology",
+      "weight_pct": 11.64
+    },
+    {
+      "sector": "Healthcare",
+      "weight_pct": 9.23
+    },
+    {
+      "sector": "Energy & Utilities",
+      "weight_pct": 7.09
+    },
+    {
+      "sector": "Materials",
+      "weight_pct": 5.64
+    },
+    {
+      "sector": "Consumer Staples",
+      "weight_pct": 4.63
+    },
+    {
+      "sector": "Real Estate",
+      "weight_pct": 2.01
+    },
+    {
+      "sector": "Unspecified",
+      "weight_pct": 0.61
+    },
+    {
+      "sector": "Diversified",
+      "weight_pct": 0.49
+    }
+  ],
+  "exit_load_rule": "Exit load of 1% if redeemed within 1 year.",
+  "benchmark_index": "Nifty 500 Multicap 50:25:25 Total Return Index",
+  "fund_manager": "Gopal Agrawal"
+}

@@ -1,0 +1,147 @@
+{
+  "scheme_slug": "hdfc-large-cap-fund-direct-growth",
+  "scheme_name": "HDFC Large Cap Fund Direct Growth",
+  "category": "Equity",
+  "nav": 1231.045,
+  "nav_date": "02-Sep-2026",
+  "aum_cr": 40197.8895,
+  "expense_ratio_pct": 1.02,
+  "min_sip": 100.0,
+  "rating_stars": 4,
+  "risk_label": "Very High",
+  "return_1d_pct": -0.51,
+  "return_1y_pct": 1.42,
+  "return_3y_pct": 10.64,
+  "return_5y_pct": 11.88,
+  "top_holdings": [
+    {
+      "stock": "ICICI Bank Ltd",
+      "weight_pct": 9.86
+    },
+    {
+      "stock": "HDFC Bank Ltd",
+      "weight_pct": 7.21
+    },
+    {
+      "stock": "Bharti Airtel Ltd",
+      "weight_pct": 5.85
+    },
+    {
+      "stock": "Kotak Mahindra Bank Ltd",
+      "weight_pct": 5.28
+    },
+    {
+      "stock": "Titan Company Ltd",
+      "weight_pct": 5.0
+    },
+    {
+      "stock": "Reliance Industries Ltd",
+      "weight_pct": 4.86
+    },
+    {
+      "stock": "Torrent Pharmaceuticals Ltd",
+      "weight_pct": 4.05
+    },
+    {
+      "stock": "Bajaj Finserv Ltd",
+      "weight_pct": 3.32
+    },
+    {
+      "stock": "Axis Bank Ltd",
+      "weight_pct": 3.28
+    },
+    {
+      "stock": "Repo",
+      "weight_pct": 3.08
+    },
+    {
+      "stock": "Lupin Ltd",
+      "weight_pct": 2.77
+    },
+    {
+      "stock": "Bajaj Auto Ltd",
+      "weight_pct": 2.76
+    },
+    {
+      "stock": "Infosys Ltd",
+      "weight_pct": 2.73
+    },
+    {
+      "stock": "Cholamandalam Investment & Finance Company Ltd",
+      "weight_pct": 2.41
+    },
+    {
+      "stock": "Ambuja Cements Ltd",
+      "weight_pct": 2.4
+    },
+    {
+      "stock": "Zomato Ltd",
+      "weight_pct": 2.28
+    },
+    {
+      "stock": "Larsen & Toubro Ltd",
+      "weight_pct": 1.93
+    },
+    {
+      "stock": "NTPC Ltd",
+      "weight_pct": 1.93
+    },
+    {
+      "stock": "Interglobe Aviation Ltd",
+      "weight_pct": 1.93
+    },
+    {
+      "stock": "Tata Motors Ltd",
+      "weight_pct": 1.86
+    }
+  ],
+  "sector_allocation": [
+    {
+      "sector": "Financial",
+      "weight_pct": 37.69
+    },
+    {
+      "sector": "Consumer Discretionary",
+      "weight_pct": 12.69
+    },
+    {
+      "sector": "Technology",
+      "weight_pct": 12.17
+    },
+    {
+      "sector": "Healthcare",
+      "weight_pct": 10.31
+    },
+    {
+      "sector": "Industrials",
+      "weight_pct": 7.54
+    },
+    {
+      "sector": "Energy & Utilities",
+      "weight_pct": 6.79
+    },
+    {
+      "sector": "Consumer Staples",
+      "weight_pct": 5.19
+    },
+    {
+      "sector": "Materials",
+      "weight_pct": 3.53
+    },
+    {
+      "sector": "Unspecified",
+      "weight_pct": 3.26
+    },
+    {
+      "sector": "Entities",
+      "weight_pct": 0.48
+    },
+    {
+      "sector": "Real Estate",
+      "weight_pct": 0.35
+    }
+  ],
+  "exit_load_rule": "Exit load of 1% if redeemed within 1 year",
+  "benchmark_index": "NIFTY 100 Total Return Index",
+  "fund_manager": "Prashant Jain"
+}

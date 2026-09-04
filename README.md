@@ -50,6 +50,7 @@ The assistant gracefully refuses non-factual or advisory queries (e.g., *"Should
 > **Facts-only. No investment advice.**
 > Past performance is not indicative of future returns.
 
+Check the live RAG prototype here: https://groww-faq-assistant.streamlit.app/
 ---
 
 *This project aims to build a trustworthy, transparent, and compliant mutual fund FAQ assistant that prioritizes accuracy over intelligence.*
